@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +28,12 @@ body {
 			<input type="hidden" name="rno" value="${param.rno}">
 			<input type="hidden" name="page" value="${param.page }">
 			<input type="hidden" name="perPageNum" value="${param.perPageNum }">
+			
 			<p>
 				<label>댓글 작성자</label>
 				<input type="text" name="writer">
 			</p>
+			
 			<p>
 				<textarea rows="2" cols="30" name="content"></textarea>
 			</p>
