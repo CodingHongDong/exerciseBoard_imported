@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hong.running.service.RunningBoardReplyServiceImpl;
 import com.hong.running.service.RunningBoardService;
+import com.hong.running.vo.RunningBoardReplyVO;
 import com.hong.running.vo.RunningBoardVO;
 import com.hong.util.domain.PageObject;
 
@@ -23,6 +25,9 @@ public class RunningBoardController {
 
 	@Autowired
 	private RunningBoardService runningBoardServiceImpl;
+	
+	@Autowired
+	private RunningBoardReplyServiceImpl replyServide;
 	
 	// 게시판 리스트
 	@GetMapping("/list.do")
@@ -40,13 +45,17 @@ public class RunningBoardController {
 	
 	// 게시판 글보기
 	@GetMapping("/view.do")
-	public String view(long no, Model model) throws Exception {
+	public String view(int no, Model model) throws Exception {
 		
 		log.info("running board 글보기 no : " + no);
 		
 		model.addAttribute("vo", runningBoardServiceImpl.view(no));
 		
 		runningBoardServiceImpl.increase(no);
+		
+		// 댓글 조회
+		List<RunningBoardReplyVO> reply = replyServide.replyList(no);
+		model.addAttribute("reply", reply);
 		
 		return "hong/runningboard/view";
 	}
