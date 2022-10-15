@@ -72,5 +72,44 @@ $(function() {
 		<a href="list.do?page=${param.page}&perPageNum=${param.perPageNum}" class="btn btn-default">리스트</a>
 	</div>
 </div>
+
+<!-- 댓글 기능 -->
+<div class="container" >
+	<ul>
+		<c:forEach items="${reply}" var="reply">
+			<li>
+				<div>
+					<p>${reply.writer} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd"/></p>
+					<p>${reply.content}</p>
+				</div>
+				<div>
+				<c:if test="${reply.writer == login.getId()}">
+				 <a href="/pilatesReply/update.do?no=${vo.no}&rno=${reply.rno}&inc=0&page=${param.page}&perPageNum=${param.perPageNum}
+				 &key=${param.key}&word=${param.word}" 
+					class="btn btn-default">댓글 수정</a>
+				 <a href="/pilatesReply/delete.do?no=${vo.no}&rno=${reply.rno}&inc=0" 
+					class="btn btn-default">댓글 삭제</a>
+				</c:if>	  
+				</div>
+			</li>				
+		</c:forEach>
+	</ul>
+</div>
+<div class="container">
+	<form action="/pilatesReply/write.do" method="post">
+	<p>
+		<label>댓글 작성자</label><input type="text" name="writer">
+	</p>
+	<p>
+		<textarea rows="2" cols="30" name="content"></textarea>
+	</p>
+	<p>
+		<input type="hidden" name="no" value="${vo.no}">
+		<button type="submit" class="btn btn-default">댓글 작성</button>
+	</p>
+	</form>
+</div>
+<!-- 댓글 기능 구현 끝 -->
+
 </body>
 </html>

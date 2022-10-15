@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hong.pilates.service.PilatesBoardReplyServiceImpl;
 import com.hong.pilates.service.PilatesBoardService;
+import com.hong.pilates.vo.PilatesBoardReplyVO;
 import com.hong.pilates.vo.PilatesBoardVO;
 import com.hong.util.domain.PageObject;
 
@@ -23,6 +25,9 @@ public class PilatesBoardController {
 
 	@Autowired
 	private PilatesBoardService pilatesBoardServiceImpl;
+	
+	@Autowired
+	private PilatesBoardReplyServiceImpl replyService;
 	
 	// 게시판 리스트
 	@GetMapping("/list.do")
@@ -40,13 +45,17 @@ public class PilatesBoardController {
 	
 	// 게시판 글보기
 	@GetMapping("/view.do")
-	public String view(long no, Model model) throws Exception {
+	public String view(int no, Model model) throws Exception {
 		
 		log.info("pilates board 글보기 no : " + no);
 		
 		model.addAttribute("vo", pilatesBoardServiceImpl.view(no));
 		
 		pilatesBoardServiceImpl.increase(no);
+		
+		// 댓글 조회
+		List<PilatesBoardReplyVO> reply = replyService.replyList(no);
+		model.addAttribute("reply", reply);
 		
 		return "hong/pilatesboard/view";
 	}

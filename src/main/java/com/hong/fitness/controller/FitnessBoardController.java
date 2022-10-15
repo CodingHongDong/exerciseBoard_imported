@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,7 @@ import com.hong.fitness.service.FitnessBoardService;
 import com.hong.fitness.vo.FitnessBoardReplyVO;
 import com.hong.fitness.vo.FitnessBoardVO;
 import com.hong.util.domain.PageObject;
-
+import com.mysql.cj.Session;
 
 import lombok.extern.log4j.Log4j;
 

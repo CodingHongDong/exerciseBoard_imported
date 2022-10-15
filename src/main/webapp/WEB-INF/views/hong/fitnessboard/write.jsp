@@ -20,10 +20,11 @@ body {
 <title>Fitness Board</title>
 </head>
 <body>
-<h2>Fitness 게시판 > 글쓰기</h2>
 <form action="write.do" method="post">
+<input type="hidden" name="memberId" value="${login.getId()}">
 <input type="hidden" name="perPageNum" value="${param.perPageNum }">
 <div class="container">
+<h2>Fitness 게시판 > 글쓰기</h2>
 <table class="table">
 	<tr>
 		<th>제목</th>
@@ -37,7 +38,7 @@ body {
 	
 	<tr>
 		<th>작성자</th>
-		<td><input name="memberId"></td>
+		<td><input name="memberId" value="${login.getId()}" readonly="readonly"></td>
 	</tr>
 	
 	<tr>

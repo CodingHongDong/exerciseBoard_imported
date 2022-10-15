@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="with=divice-width,initial-scale=1">
 <link rel="stylesheet" 
 		href="<c:url value="/resources/user/css/bootstrap.min.css" />">
@@ -20,31 +20,26 @@ body {
 <title>Pilates Board</title>
 </head>
 <body>
-<form action="write.do" method="post">
-<input type="hidden" name="perPageNum" value="${param.perPageNum }">
-<div class="container">
-<h2>Pilates 게시판 > 글쓰기</h2>
-<table class="table">
-	<tr>
-		<th>제목</th>
-		<td><input name="title"></td>
-	</tr>
-	
-	<tr>
-		<th>내용</th>
-		<td><textarea rows="5" style="width: 600px;" name="content"></textarea> </td>
-	</tr>
-	
-	<tr>
-		<th>작성자</th>
-		<td><input name="memberId"></td>
-	</tr>
-	
-	<tr>
-		<td colspan="2"><button class="btn btn-default">등록</button></td>
-	</tr>
-</table>
+<div align="center">
+	<h2>Pilates Board > 댓글 수정</h2>
+	<div class="container">
+		<form action="/pilatesReply/update.do" method="post">
+			<input type="hidden" name="no" value="${param.no}">
+			<input type="hidden" name="rno" value="${param.rno}">
+			<input type="hidden" name="page" value="${param.page }">
+			<input type="hidden" name="perPageNum" value="${param.perPageNum }">
+			
+			<p>
+				<textarea rows="2" cols="30" name="content"></textarea>
+			</p>
+			
+			<p>
+				<button class="btn btn-default">수정</button>
+				<button type="reset" class="btn btn-default">새로입력</button>
+			</p>
+			
+		</form>
+	</div>
 </div>
-</form>
 </body>
 </html>

@@ -30,11 +30,6 @@ body {
 			<input type="hidden" name="perPageNum" value="${param.perPageNum }">
 			
 			<p>
-				<label>댓글 작성자</label>
-				<input type="text" name="writer">
-			</p>
-			
-			<p>
 				<textarea rows="2" cols="30" name="content"></textarea>
 			</p>
 			

@@ -16,7 +16,7 @@
 
 	<!-- 댓글 수정 -->
 	<update id="replyUpdate">
-	update running_reply set writer = #{writer}, content = #{content} where rno = #{rno} and no = #{no}
+	update running_reply set content = #{content} where rno = #{rno} and no = #{no}
 	</update>
 
 	<!-- 댓글 삭제 -->

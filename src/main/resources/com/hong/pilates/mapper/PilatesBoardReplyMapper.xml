@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hong.pilates.mapper.PilatesBoardReplyMapper">
+
+	<!-- 댓글 조회 -->
+	<select id="replyList" resultType="com.hong.pilates.vo.PilatesBoardReplyVO">
+		select rno, no, writer, content, regDate from pilates_reply where no = #{no}
+	</select>
+	
+	<!-- 댓글 작성 -->
+	<insert id="replyWrite" parameterType="com.hong.pilates.vo.PilatesBoardReplyVO">
+		insert into pilates_reply(no, writer, content) 
+		values(#{no}, #{writer}, #{content})
+	</insert>
+
+	<!-- 댓글 수정 -->
+	<update id="replyUpdate">
+	update pilates_reply set content = #{content} where rno = #{rno} and no = #{no}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="replyDelete">
+delete from pilates_reply where rno = #{rno}
+	</delete>
+
+</mapper>

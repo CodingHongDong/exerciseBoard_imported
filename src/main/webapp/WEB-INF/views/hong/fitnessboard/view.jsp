@@ -83,11 +83,13 @@ $(function() {
 					<p>${reply.content}</p>
 				</div>
 				<div>
+					<c:if test="${reply.writer == login.getId()}">
 				 <a href="/reply/update.do?no=${vo.no}&rno=${reply.rno}&inc=0&page=${param.page}&perPageNum=${param.perPageNum}
 				 &key=${param.key}&word=${param.word}" 
 					class="btn btn-default">댓글 수정</a>
 				 <a href="/reply/delete.do?no=${vo.no}&rno=${reply.rno}&inc=0" 
-					class="btn btn-default">댓글 삭제</a>  
+					class="btn btn-default">댓글 삭제</a> 
+					 </c:if>
 				</div>
 			</li>				
 		</c:forEach>

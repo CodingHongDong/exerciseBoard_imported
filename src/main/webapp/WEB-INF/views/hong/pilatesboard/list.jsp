@@ -55,7 +55,7 @@ img {
 <!-- 로고 -->
 <header>
 	<h1 class="text-center">
-		<a href="home.do"><img src="<c:url value="/resources/user/dog.jpg"/>"></a>
+		<a href="http://localhost/hong/home.do"><img src="<c:url value="/resources/user/dog.jpg"/>"></a>
 	</h1>
 </header>
 

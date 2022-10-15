@@ -20,10 +20,10 @@ body {
 <title>Free Board</title>
 </head>
 <body>
-<h2>Free 게시판 > 글쓰기</h2>
 <form action="write.do" method="post">
 <input type="hidden" name="perPageNum" value="${param.perPageNum }">
 <div class="container">
+<h2>Free 게시판 > 글쓰기</h2>
 <table class="table">
 	<tr>
 		<th>제목</th>
