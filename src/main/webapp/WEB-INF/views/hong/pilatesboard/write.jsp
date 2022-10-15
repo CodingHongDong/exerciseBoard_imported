@@ -37,7 +37,7 @@ body {
 	
 	<tr>
 		<th>작성자</th>
-		<td><input name="memberId"></td>
+		<td><input name="memberId" value="${login.getId()}" readonly="readonly"></td>
 	</tr>
 	
 	<tr>

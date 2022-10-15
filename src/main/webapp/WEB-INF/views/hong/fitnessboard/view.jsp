@@ -98,7 +98,7 @@ $(function() {
 <div class="container">
 	<form action="/reply/write.do" method="post">
 	<p>
-		<label>댓글 작성자</label><input type="text" name="writer">
+		<label>댓글 작성자</label><input type="text" name="writer" value="${login.getId()}" readonly="readonly">
 	</p>
 	<p>
 		<textarea rows="2" cols="30" name="content"></textarea>

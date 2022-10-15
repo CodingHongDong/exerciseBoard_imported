@@ -123,7 +123,4 @@ public class FitnessBoardController {
 		return "redirect:list.do?perPageNum=" + perPageNum;
 	}
 	
-	// 댓글 삭제 get
-	//public String replyDelete
-	
 }
