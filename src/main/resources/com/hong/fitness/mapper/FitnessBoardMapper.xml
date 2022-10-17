@@ -75,4 +75,11 @@ select * from fitnessboard <include refid="search" /> order by no desc limit #{s
 		where no=#{no}
 	</delete>
 	
+	<!-- 게시물 댓글 갯수 보이기 -->
+	<update id="updateReplyCount" parameterType="int">
+		UPDATE fitnessboard fb 
+	set fb.reply_count = (SELECT count(rno) from fitness_reply WHERE no = #{no})
+    WHERE fb.no = #{no};
+	</update>
+	
 </mapper>

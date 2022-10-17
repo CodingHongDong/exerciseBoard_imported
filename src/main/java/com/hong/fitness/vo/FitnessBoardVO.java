@@ -14,4 +14,5 @@ public class FitnessBoardVO {
 	private int hit;
 	private String memberId;
 	
+	private int reply_count;
 }

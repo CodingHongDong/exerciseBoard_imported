@@ -27,4 +27,8 @@ public interface FitnessBoardMapper {
 	
 	// 조회수 1 증가
 	public int increase(long no) throws Exception;
+	
+	// 게시믈 댓글 갯수 보이기
+	public int updateReplyCount(int no) throws Exception;
+	
 }

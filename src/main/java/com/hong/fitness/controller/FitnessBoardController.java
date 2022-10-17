@@ -64,6 +64,7 @@ public class FitnessBoardController {
 		List<FitnessBoardReplyVO> reply = replyService.replyList(no);
 		model.addAttribute("reply", reply);
 		
+		fitnessBoardServiceImpl.updateReplyCount(no);
 		
 		return "hong/fitnessboard/view";
 	}

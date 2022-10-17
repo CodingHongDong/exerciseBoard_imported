@@ -68,5 +68,13 @@ public class FitnessBoardServiceImpl implements FitnessBoardService {
 		return mapper.increase(no);
 	}
 
+	// 게시믈 댓글 갯수 보이기
+	@Override
+	public int updateReplyCount(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.updateReplyCount(no);
+	}
+
+	
 	
 }
