@@ -82,6 +82,7 @@ ul li a:hover {
 		<li><b><a href="runningboard/list.do">running</a></b></li>
 		<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
 		<li><b><a href="freeboard/list.do">자유게시판</a></b></li>	
+		<li><b><a href="../kakaomap/address.do">지도게시판</a></b></li>	
 	</ul>
 </nav>
 

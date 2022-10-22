@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.hong.fitness.mapper.FitnessBoardMapper;
 import com.hong.fitness.vo.FitnessBoardVO;
 import com.hong.util.domain.PageObject;
+import com.mysql.cj.xdevapi.JsonString;
 
 import lombok.extern.log4j.Log4j;
 

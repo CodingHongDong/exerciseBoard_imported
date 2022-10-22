@@ -10,11 +10,10 @@ public class AddressController {
 
 	@GetMapping("/address")
 	public String kakaomap() {
-		
+		int a;
 		System.out.println("카카오 API 테스트");
 		
 		return "kakaomap/address";
 	}
-	
 	
 }

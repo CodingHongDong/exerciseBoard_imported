@@ -56,6 +56,15 @@ $(function() {
 	</tr>
 	
 	<tr>
+		<th>위치</th>
+		<td>
+		<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+		위치 보기</a>
+		<div style="DISPLAY: none"><jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/></div>
+		</td>
+	</tr>
+	
+	<tr>
 		<th>조회수</th>
 		<td>${vo.hit}</td>
 	</tr>

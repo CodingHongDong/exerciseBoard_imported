@@ -39,6 +39,10 @@ body {
 		<th>작성자</th>
 		<td><input name="memberId" value="${login.getId()}" readonly="readonly"></td>
 	</tr>
+	<tr>
+		<th>위치</th>
+		<td><jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/></td>
+	</tr>
 	
 	<tr>
 		<td colspan="2"><button class="btn btn-default">등록</button></td>
