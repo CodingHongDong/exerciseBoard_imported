@@ -1,5 +1,6 @@
 package com.hong.fitness.vo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import lombok.Data;
@@ -17,6 +18,6 @@ public class FitnessBoardVO {
 	private int reply_count;
 	
 	// 위도, 경도 컬럼 추가
-	private float latitude;
-	private float longitude;
+	private BigDecimal lat;
+	private BigDecimal lng;
 }

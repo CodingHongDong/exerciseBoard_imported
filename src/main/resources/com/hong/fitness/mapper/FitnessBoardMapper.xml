@@ -59,8 +59,8 @@ select * from fitnessboard <include refid="search" /> order by no desc limit #{s
 	
 	<!-- write -->
 	<insert id="write">
-		insert into fitnessboard(no, title, content, memberId, latitude, longitude) 
-		values (#{no}, #{title}, #{content}, #{memberId}, #{latitude}, #{longitude})
+		insert into fitnessboard(no, title, content, memberId, lat, lng) 
+		values (#{no}, #{title}, #{content}, #{memberId}, #{lat}, #{lng})
 	</insert>
 	
 	<!-- update -->

@@ -1,10 +1,10 @@
 package com.hong.fitness.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +19,6 @@ import com.hong.fitness.service.FitnessBoardService;
 import com.hong.fitness.vo.FitnessBoardReplyVO;
 import com.hong.fitness.vo.FitnessBoardVO;
 import com.hong.util.domain.PageObject;
-import com.mysql.cj.Session;
 
 import lombok.extern.log4j.Log4j;
 
@@ -53,7 +52,7 @@ public class FitnessBoardController {
 	@GetMapping("/view.do")
 	public String view(@RequestParam("no") int no, Model model, HttpSession session, FitnessBoardVO vo, PageObject pageObject) throws Exception {
 		
-		log.info("fitness board 글보기 no : " + no);
+		log.info("fitness board 글보기 no : " + vo);
 		
 		model.addAttribute("vo", fitnessBoardServiceImpl.view(no));
 		model.addAttribute("pageObject", pageObject);
@@ -81,11 +80,14 @@ public class FitnessBoardController {
 	
 	// 게시판 글쓰기 처리
 	@PostMapping("/write.do")
-	public String write(FitnessBoardVO vo, int perPageNum) throws Exception {
+	public String write(FitnessBoardVO vo, int perPageNum, Model model, BigDecimal lat, BigDecimal lng) throws Exception {
 		
 		log.info("게시판 글쓰기 처리 vo : " + vo);
 		
 		fitnessBoardServiceImpl.write(vo);
+		
+		model.addAttribute("lat", lat);
+		model.addAttribute("lng", lng);
 		
 		return "redirect:list.do?page=1&perPageNum=" + perPageNum;
 	}

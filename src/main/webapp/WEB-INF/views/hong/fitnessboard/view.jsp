@@ -16,6 +16,11 @@
 body {
 	background-color: #afe0b3;
 }
+
+details :hover {
+	text-decoration: underline;
+	color: white;
+}
 </style>
 <script type="text/javascript">
 $(function() {
@@ -57,10 +62,10 @@ $(function() {
 	
 	<tr>
 		<th>위치</th>
-		<td>
-		<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
-		위치 보기</a>
-		<div style="DISPLAY: none"><jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/></div>
+		<td><details>
+		<summary>위치보기</summary>
+		<jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/>
+		</details> 
 		</td>
 	</tr>
 	
