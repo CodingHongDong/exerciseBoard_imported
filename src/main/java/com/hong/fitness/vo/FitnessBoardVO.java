@@ -18,6 +18,6 @@ public class FitnessBoardVO {
 	private int reply_count;
 	
 	// 위도, 경도 컬럼 추가
-	private BigDecimal lat;
-	private BigDecimal lng;
+	private Double lat;
+	private Double lng;
 }

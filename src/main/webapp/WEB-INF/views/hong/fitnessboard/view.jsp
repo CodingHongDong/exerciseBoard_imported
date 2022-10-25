@@ -62,9 +62,10 @@ $(function() {
 	
 	<tr>
 		<th>위치</th>
-		<td><details>
-		<summary>위치보기</summary>
-		<jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/>
+		<td>
+		<details>
+			<summary>위치보기</summary>
+			<jsp:include page="/WEB-INF/views/kakaomap/address.jsp"/>
 		</details> 
 		</td>
 	</tr>

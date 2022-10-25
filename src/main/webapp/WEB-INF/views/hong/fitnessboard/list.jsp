@@ -125,7 +125,6 @@ img {
 		<th>작성일</th>
 		<th>조회수</th>
 	</tr>
-	
 	<c:forEach items="${vo}" var="vo">
 	<tr class="dataRow">
 		<td class="no">${vo.no}</td>

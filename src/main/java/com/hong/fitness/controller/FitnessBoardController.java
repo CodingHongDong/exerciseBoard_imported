@@ -56,6 +56,8 @@ public class FitnessBoardController {
 		
 		model.addAttribute("vo", fitnessBoardServiceImpl.view(no));
 		model.addAttribute("pageObject", pageObject);
+		//지도 마커 수정 가능/불가능을 위한 attribute
+		model.addAttribute("mode", "view");
 		
 		fitnessBoardServiceImpl.increase(no);
 		
@@ -71,7 +73,12 @@ public class FitnessBoardController {
 	
 	// 게시판 글쓰기 폼
 	@GetMapping("/write.do")
-	public String writeForm() throws Exception {
+	public String writeForm(Model model) throws Exception {
+		
+		//지도 마커 수정 가능/불가능을 위한 attribute
+		String mode = (new Object(){}.getClass().getEnclosingMethod().getName()).contains("view") ? "view" : "write";
+		log.debug(mode);
+		model.addAttribute("mode", mode);
 		
 		log.info("게시판 글쓰기 폼");
 		
@@ -80,14 +87,11 @@ public class FitnessBoardController {
 	
 	// 게시판 글쓰기 처리
 	@PostMapping("/write.do")
-	public String write(FitnessBoardVO vo, int perPageNum, Model model, BigDecimal lat, BigDecimal lng) throws Exception {
+	public String write(FitnessBoardVO vo, int perPageNum) throws Exception {
 		
 		log.info("게시판 글쓰기 처리 vo : " + vo);
 		
 		fitnessBoardServiceImpl.write(vo);
-		
-		model.addAttribute("lat", lat);
-		model.addAttribute("lng", lng);
 		
 		return "redirect:list.do?page=1&perPageNum=" + perPageNum;
 	}

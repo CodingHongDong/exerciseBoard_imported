@@ -48,7 +48,7 @@ select * from fitnessboard <include refid="search" /> order by no desc limit #{s
 
 	<!-- view -->
 	<select id="view" resultType="com.hong.fitness.vo.FitnessBoardVO">
-		select no, title, content, memberId, regDate, hit
+		select no, title, content, memberId, regDate, hit, lat, lng 
 		from fitnessboard where no=#{no}		
 	</select>
 	
