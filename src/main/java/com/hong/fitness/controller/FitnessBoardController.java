@@ -56,6 +56,7 @@ public class FitnessBoardController {
 		
 		model.addAttribute("vo", fitnessBoardServiceImpl.view(no));
 		model.addAttribute("pageObject", pageObject);
+		
 		//지도 마커 수정 가능/불가능을 위한 attribute
 		model.addAttribute("mode", "view");
 		

@@ -21,6 +21,7 @@ details :hover {
 	text-decoration: underline;
 	color: white;
 }
+
 </style>
 <script type="text/javascript">
 $(function() {
@@ -89,7 +90,7 @@ $(function() {
 </div>
 
 <!-- 댓글 기능 -->
-<div class="container" >
+<div class="container">
 	<ul>
 		<c:forEach items="${reply}" var="reply">
 			<li>

@@ -55,7 +55,7 @@ ul li a:hover {
 
 <!-- 로그인, 회원가입, 로그아웃 -->
 <br>
-<div style="text-align:right; color: #3B3538;">
+<div style="text-align:right; color: #3B3538; margin: 10px;">
 <c:choose>
 	<c:when test="${empty login}">
 		<a style="color:#5ADB87" href="login.do">login</a>
@@ -78,11 +78,19 @@ ul li a:hover {
 <!-- nav -->
 <nav>
 	<ul>
-		<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
-		<li><b><a href="runningboard/list.do">running</a></b></li>
-		<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
-		<li><b><a href="freeboard/list.do">자유게시판</a></b></li>	
-		<li><b><a href="../kakaomap/address.do">지도게시판</a></b></li>	
+		<c:if test="${empty login or login.id != 'admin'}">
+			<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
+			<li><b><a href="runningboard/list.do">running</a></b></li>
+			<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
+			<li><b><a href="freeboard/list.do">자유게시판</a></b></li>
+		</c:if>
+		<c:if test="${login.id == 'admin' }">
+			<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
+			<li><b><a href="runningboard/list.do">running</a></b></li>
+			<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
+			<li><b><a href="freeboard/list.do">자유게시판</a></b></li>
+			<li><b><a href="admin/memberList.do">회원관리</a></b></li>	
+		</c:if>			
 	</ul>
 </nav>
 

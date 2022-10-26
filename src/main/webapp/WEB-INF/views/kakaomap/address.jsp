@@ -9,8 +9,7 @@
 </head>
 <body>
 
-	<div id="map" style="width:500px;height:400px; "></div>
-		<p><em>지도를 클릭해주세요!</em></p> 				
+	<div id="map" style="width:500px;height:400px; "></div> 				
 		
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c1cb75304bbdee6e20b06e355e68a28d"></script>
 		<script>
@@ -46,21 +45,20 @@
 			if(mode == 'write'){
 				kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 									
-			    // 클릭한 위도, 경도 정보를 가져옵니다 
-			    var latlng = mouseEvent.latLng; 
-			    
-			    
-			    const lat = latlng.getLat();
-				const lng = latlng.getLng();
-			    
-			    // 마커 위치를 클릭한 위치로 옮깁니다
-			    marker.setPosition(latlng);
-			        
-				console.log('lat: '+lat + ' ,lng: ' + lng);
-				
-				document.getElementById("lat").value = lat;
-				document.getElementById("lng").value = lng;
-			    console.log('refreshed');
+				    // 클릭한 위도, 경도 정보를 가져옵니다 
+				    var latlng = mouseEvent.latLng; 
+				 
+				    const lat = latlng.getLat();
+					const lng = latlng.getLng();
+				    
+				    // 마커 위치를 클릭한 위치로 옮깁니다
+				    marker.setPosition(latlng);
+				        
+					console.log('lat: '+lat + ' ,lng: ' + lng);
+					
+					document.getElementById("lat").value = lat;
+					document.getElementById("lng").value = lng;
+				    console.log('refreshed');
 				});
 			}
 		</script>
