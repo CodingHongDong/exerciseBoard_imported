@@ -27,9 +27,9 @@ public class HongInterceptor extends HandlerInterceptorAdapter{
 	// 데이터를 넣는 방법 : static 초기화 블록
 	static {
 	// 공지사항 - 등록, 수정, 삭제 - 관리자 : 0
-	authMap.put("/notice/write.do", 0);	
-	authMap.put("/notice/update.do", 0);
-	authMap.put("/notice/delete.do", 0);
+	authMap.put("/hong/admin/memberList.do", 0);
+	authMap.put("/hong/admin/view.do", 0);
+	authMap.put("/hong/admin/delete.do", 0);
 
 		
 	// Fitness 게시판 - 보기, 등록, 수정, 삭제 - 회원 : 1

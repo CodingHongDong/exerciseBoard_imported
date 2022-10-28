@@ -37,9 +37,27 @@ public class AdminController {
 		return "hong/admin/memberList";
 	}
 	
+	// 회원 정보 상세
+	@GetMapping("/view.do")
+	public String view(String id, Model model, MemberVO vo, PageObject pageObject) throws Exception{
+		
+		log.info("회원 정보 보기 vo : " + vo);
+		
+		model.addAttribute("vo", adminServiceImpl.view(id));
+		model.addAttribute("pageObject", pageObject);
+		
+		return "hong/admin/view";
+	}
 	
 	// 회원아이디 삭제
-	
-	
+	@GetMapping("/delete.do")
+	public String delete(String id, int perPageNum) throws Exception{
+		
+		log.info("회원 아이디 삭제 id : " + id);
+		
+		adminServiceImpl.delete(id);
+		
+		return "redirect:memberList.do?perPageNum=" + perPageNum; 
+	}
 	
 }

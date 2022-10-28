@@ -16,6 +16,23 @@
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="<c:url value="/resources/user/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript">
+$(function() {
+	$(".dataRow").click(function() {
+		var id = $(this).find(".id").text();
+		location = "view.do?id=" + id 
+				+ "&page=${pageObject.page}"
+				+ "&perPageNum=${pageObject.perPageNum}"
+	});
+
+});
+</script>
+<style type="text/css">
+.dataRow:hover {
+	background: #eee;
+	cursor: pointer;
+	}
+</style>
 <title>관리자 - 회원관리</title>
 </head>
 <body>
@@ -31,9 +48,9 @@
 	
 	<c:forEach items="${vo}" var="vo">
 	<tr class="dataRow">
-		<td>${vo.id}</td>
+		<td class="id">${vo.id}</td>
 		<td>${vo.name}</td>	
-		<td><fmt:formatDate value="${vo.birth}" pattern="yyyy-MM-dd"/></td>
+		<td>${vo.birth }</td>
 		<td>${vo.email}</td>
 	</tr>
 	</c:forEach>

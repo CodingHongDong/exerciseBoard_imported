@@ -241,8 +241,7 @@ $(function() {
 		</div>
 		<div class="form-group">
 			<label>생년월일</label>
-			<input id="birth" name="birth" required="required" placeholder="yyyy-MM-dd" type="date"
-			class="form-control datepicker" autocomplete="off">
+			<input id="birth" name="birth" required="required" class="form-control datepicker" autocomplete="off">
 		</div>
 		<div class="form-group">
 			<label>이메일</label>
