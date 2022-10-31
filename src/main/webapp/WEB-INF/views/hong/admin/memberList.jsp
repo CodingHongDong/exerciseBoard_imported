@@ -28,14 +28,68 @@ $(function() {
 });
 </script>
 <style type="text/css">
+nav{
+	margin: 10px;
+}
+
 .dataRow:hover {
 	background: #eee;
 	cursor: pointer;
 	}
+	
+img {
+	margin: 10px;
+	height: 100px;
+	width: 100px;
+	float: none;
+}
+
+ul {
+	list-style: none;
+	text-align: center;
+	border-top: 2px solid #d9d441;
+	border-bottom: 2px solid  #d9d441;
+	padding: 10px 0;
+}
+
+ul li {
+	display: inline;
+	text-transform: uppercase;
+	padding: 0 10px;
+	letter-spacing: 10px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+ul li a:hover {
+	text-decoration: underline;
+	color: white;
+}
 </style>
 <title>관리자 - 회원관리</title>
 </head>
 <body>
+
+<!-- 로고 -->
+<header>
+	<h1 class="text-center">
+		<a href="http://localhost/hong/home.do"><img src="<c:url value="/resources/user/dog.jpg"/>"></a>
+	</h1>
+</header>
+
+<!-- nav -->
+<nav>
+	<ul>
+		<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
+		<li><b><a href="runningboard/list.do">running</a></b></li>
+		<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
+		<li><b><a href="freeboard/list.do">자유게시판</a></b></li>
+	</ul>
+</nav>
+
 <h1 style="text-align: center;">회원리스트</h1>
 <div class="container">
 <table class="table">

@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hong.admin.service.AdminServiceImpl;
+import com.hong.fitness.service.FitnessBoardReplyServiceImpl;
+import com.hong.fitness.service.FitnessBoardServiceImpl;
+import com.hong.fitness.vo.FitnessBoardReplyVO;
+import com.hong.fitness.vo.FitnessBoardVO;
 import com.hong.member.vo.MemberVO;
 import com.hong.util.domain.PageObject;
 
@@ -22,6 +26,12 @@ public class AdminController {
 
 	@Autowired
 	private AdminServiceImpl adminServiceImpl;
+	
+	@Autowired
+	private FitnessBoardServiceImpl fitness;
+	
+	@Autowired
+	private FitnessBoardReplyServiceImpl fitenssReply;
 	
 	// 회원리스트 조회
 	@GetMapping("/memberList.do")
@@ -60,4 +70,35 @@ public class AdminController {
 		return "redirect:memberList.do?perPageNum=" + perPageNum; 
 	}
 	
+	// 관리자 > fitnessboard list
+	@GetMapping("/fitnessboard/list.do")
+	public String fitnessboardList(Model model, PageObject pageObject) throws Exception{
+		
+		log.info("관리자 > Fitnessboard List");
+		
+		List<FitnessBoardVO> list = fitness.list(pageObject);
+		
+		model.addAttribute("vo", list);
+		model.addAttribute("pageObject", pageObject);
+		
+		return "hong/admin/fitnessboard/list";
+	}
+	
+	// 관리자 > fitnessboard view
+	@GetMapping("/fitnessboard/view.do")
+	public String fitnessboardView(int no, Model model, PageObject pageObject) throws Exception {
+		
+		log.info("관리자 > fitness board 글보기 no : " + no);
+		
+		model.addAttribute("vo", fitness.view(no));
+		model.addAttribute("pageObject", pageObject);
+		
+		// 댓글 조회
+		List<FitnessBoardReplyVO> reply = fitenssReply.replyList(no);
+		model.addAttribute("reply", reply);
+		
+		fitness.updateReplyCount(no);
+		
+		return "hong/admin/fitnessboard/view";
+	}
 }
