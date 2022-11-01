@@ -57,6 +57,8 @@ public class RunningBoardController {
 		List<RunningBoardReplyVO> reply = replyServide.replyList(no);
 		model.addAttribute("reply", reply);
 		
+		runningBoardServiceImpl.updateReplyCount(no);
+		
 		return "hong/runningboard/view";
 	}
 	

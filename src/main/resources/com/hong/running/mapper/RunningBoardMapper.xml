@@ -75,4 +75,11 @@ select * from runningboard <include refid="search" /> order by no desc limit #{s
 		where no=#{no}
 	</delete>
 	
+	<!-- 게시물 댓글 갯수 보이기 -->
+	<update id="updateReplyCount" parameterType="int">
+		UPDATE runningboard rb 
+	set rb.reply_count = (SELECT count(rno) from running_reply WHERE no = #{no})
+    WHERE rb.no = #{no};
+	</update>
+	
 </mapper>

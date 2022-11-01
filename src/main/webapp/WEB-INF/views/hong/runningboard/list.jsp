@@ -120,7 +120,11 @@ img {
 	<c:forEach items="${vo}" var="vo">
 	<tr class="dataRow">
 		<td class="no">${vo.no}</td>
-		<td>${vo.title}</td>
+		<td>${vo.title}
+			<c:if test="${vo.reply_count ne 0}">
+				<small><b>[&nbsp;<c:out value="${vo.reply_count}" />&nbsp;]</b></small>
+			</c:if>
+		</td>
 		<td>${vo.memberId}</td>
 		<td><fmt:formatDate value="${vo.regDate}" pattern="yyyy-MM-dd"/> </td>
 		<td>${vo.hit}</td>

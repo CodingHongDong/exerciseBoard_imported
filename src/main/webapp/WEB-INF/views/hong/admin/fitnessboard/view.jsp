@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <style type="text/css">
+
 details :hover {
 	text-decoration: underline;
 	color: white;

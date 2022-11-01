@@ -54,4 +54,10 @@ public class RunningBoardServiceImpl implements RunningBoardService {
 		return mapper.increase(no);
 	}
 
+	@Override
+	public int updateReplyCount(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.updateReplyCount(no);
+	}
+
 }
