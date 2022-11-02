@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,8 +50,16 @@ $(function() {
 </table>
 
 	<div>
+		<c:if test="${vo.id == 'admin'}">
+		<div class="alert alert-danger" role="alert" style="text-align: center;">
+		  관리자
+		</div>
+		</c:if>
+		
+		<c:if test="${vo.id != 'admin'}">
 		<a href="delete.do?id=${vo.id}&perPageNum=${param.perPageNum}" 
 			class="btn btn-default" id="deleteBtn">삭제</a>
+		</c:if>	
 		<a href="memberList.do?page=${param.page}&perPageNum=${param.perPageNum}" class="btn btn-default">리스트</a>
 	</div>
 	

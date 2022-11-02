@@ -68,6 +68,12 @@ ul li a:hover {
 	text-decoration: underline;
 	color: white;
 }
+
+member {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
 </style>
 <title>관리자 - 회원관리</title>
 </head>
@@ -93,6 +99,12 @@ ul li a:hover {
 <h1 style="text-align: center;">회원리스트</h1>
 <div class="container">
 <table class="table">
+
+	<tr class="member">
+		<th>총 회원 수</th>
+		<th>${member}</th>
+	</tr>
+	
 	<tr>
 		<th>아이디</th>
 		<th>이름</th>
@@ -100,13 +112,14 @@ ul li a:hover {
 		<th>이메일</th>
 	</tr>
 	
-	<c:forEach items="${vo}" var="vo">
+	<c:forEach items="${vo}" var="vo" >
 	<tr class="dataRow">
 		<td class="id">${vo.id}</td>
 		<td>${vo.name}</td>	
 		<td>${vo.birth }</td>
 		<td>${vo.email}</td>
 	</tr>
+	
 	</c:forEach>
 	
 	<c:if test="${pageObject.totalPage > 1 }">

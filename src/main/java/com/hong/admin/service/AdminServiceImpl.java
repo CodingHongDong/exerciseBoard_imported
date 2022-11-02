@@ -34,4 +34,11 @@ public class AdminServiceImpl implements AdminService {
 		return mapper.delete(id);
 	}
 
+	@Override
+	public int getTotalRow(PageObject pageObject) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalRow(pageObject);
+	}
+
+
 }

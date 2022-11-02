@@ -43,6 +43,7 @@ public class AdminController {
 		
 		model.addAttribute("vo", list);
 		model.addAttribute("pageObject", pageObject);
+		model.addAttribute("member", adminServiceImpl.getTotalRow(pageObject));
 		
 		return "hong/admin/memberList";
 	}
@@ -69,6 +70,8 @@ public class AdminController {
 		
 		return "redirect:memberList.do?perPageNum=" + perPageNum; 
 	}
+	
+	// fitnessboard 관련 시작
 	
 	// 관리자 > fitnessboard list
 	@GetMapping("/fitnessboard/list.do")
@@ -101,4 +104,16 @@ public class AdminController {
 		
 		return "hong/admin/fitnessboard/view";
 	}
+	
+	// 관리자 > fitnessboard delete
+	@GetMapping("/fitnessboard/delete.do")
+	public String delete(FitnessBoardVO vo, int perPageNum) throws Exception{
+		
+		fitness.delete(vo.getNo());
+		
+		return "redirect:list.do?perPageNum=" + perPageNum;
+		
+	}
+	
+	// fitnessboard 관련 끝
 }

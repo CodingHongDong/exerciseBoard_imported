@@ -16,4 +16,6 @@ public interface AdminService {
 	// 회원 정보 삭제
 	public int delete(String id) throws Exception;
 	
+	// 전체 데이터 개수
+	public int getTotalRow(PageObject pageObject) throws Exception;
 }

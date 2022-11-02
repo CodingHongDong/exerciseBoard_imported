@@ -14,4 +14,5 @@ public class MemberVO {
 	private String email;
 	private int status;
 	
+	private int memberCount;
 }

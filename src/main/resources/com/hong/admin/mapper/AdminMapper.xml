@@ -17,4 +17,9 @@ select * from member order by name limit #{startRow}, #{perPageNum}
 delete from member where id = #{id}
 	</delete>
 
+	<!-- 전체 회원 수 -->
+	<select id="getTotalRow" resultType="int">
+		select count(*) from member
+	</select>
+
 </mapper>

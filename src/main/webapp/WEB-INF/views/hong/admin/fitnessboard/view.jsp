@@ -92,7 +92,7 @@ $(function() {
 				</div>
 				<div>
 
-				 <a href="/reply/delete.do?no=${vo.no}&rno=${reply.rno}&inc=0" 
+				 <a href="/admin/reply/delete.do?no=${vo.no}&rno=${reply.rno}&inc=0" 
 					class="btn btn-default">댓글 삭제</a> 
 				</div>
 			</li>				
