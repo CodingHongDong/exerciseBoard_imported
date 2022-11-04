@@ -31,4 +31,7 @@ public interface FitnessBoardMapper {
 	// 게시믈 댓글 갯수 보이기
 	public int updateReplyCount(int no) throws Exception;
 	
+	// 회원이 쓴 게시글 갯수
+	public int getTotalBoard(String memberId) throws Exception;
+	
 }

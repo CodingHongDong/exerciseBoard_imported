@@ -47,6 +47,16 @@ $(function() {
 		<td>${vo.email}</td>
 	</tr>
 	
+	<tr>
+		<th>회원이 쓴 게시글 수</th>
+		<td>${getTotalBoard}</td>
+	</tr>
+	
+	<tr>
+		<th>회원이 쓴 댓글 수</th>
+		<td>${getTotalReply}</td>
+	</tr>
+	
 </table>
 
 	<div>

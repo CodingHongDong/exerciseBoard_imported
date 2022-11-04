@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hong.admin.service.AdminServiceImpl;
 import com.hong.fitness.service.FitnessBoardReplyServiceImpl;
@@ -56,6 +57,11 @@ public class AdminController {
 		
 		model.addAttribute("vo", adminServiceImpl.view(id));
 		model.addAttribute("pageObject", pageObject);
+		
+		// 회원이 쓴 게시글 갯수 가져오기
+		model.addAttribute("getTotalBoard", fitness.getTotalBoard(id));
+		// 회원이 쓴 댓글 갯수 가져오기
+		model.addAttribute("getTotalReply", fitenssReply.getTotalReply(id));
 		
 		return "hong/admin/view";
 	}
@@ -114,6 +120,7 @@ public class AdminController {
 		return "redirect:list.do?perPageNum=" + perPageNum;
 		
 	}
+	
 	
 	// fitnessboard 관련 끝
 }

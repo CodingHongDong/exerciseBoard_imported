@@ -76,6 +76,12 @@ public class FitnessBoardServiceImpl implements FitnessBoardService {
 		return mapper.updateReplyCount(no);
 	}
 
+	@Override
+	public int getTotalBoard(String memberId) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalBoard(memberId);
+	}
+
 	
 	
 }

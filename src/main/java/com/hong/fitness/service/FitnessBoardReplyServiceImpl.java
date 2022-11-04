@@ -41,4 +41,10 @@ public class FitnessBoardReplyServiceImpl implements FitnessBoardReplyService {
 		mapper.replyDelete(rno);
 	}
 
+	@Override
+	public int getTotalReply(String writer) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalReply(writer);
+	}
+
 }

@@ -17,4 +17,7 @@ public interface FitnessBoardReplyMapper {
 	
 	// 댓글 삭제
 	public void replyDelete(int rno) throws Exception;
+	
+	// 회원이 쓴 댓글 수
+	public int getTotalReply(String writer) throws Exception;
 }

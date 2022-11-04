@@ -23,5 +23,11 @@
 	<delete id="replyDelete">
 delete from fitness_reply where rno = #{rno}
 	</delete>
+	
+	<!-- 회원이 쓴 총 댓글 수 -->
+	<select id="getTotalReply" resultType="int">
+	select count(*) from fitness_reply where writer = #{writer}
+	</select>
+	
 
 </mapper>
