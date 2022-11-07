@@ -25,4 +25,7 @@ public interface PilatesBoardService {
 	// 조회수 1 증가
 	public int increase(long no) throws Exception;
 	
+	// 전체 데이터 개수
+	public int getTotalRow(PageObject pageObject) throws Exception;
+	
 }

@@ -126,13 +126,42 @@ member {
 	<!-- 전체 페이지가 2페이지 이상이면 보여주는 부분 -->
 		<tr>
 			<td colspan="5">
-				<pageNav:pageNav listURI="memberLists.do" 
-					pageObject="${pageObject }" />
+				<pageNav:pageNav listURI="admin/memberList.do" 
+					pageObject="${pageObject}" />
 			</td>
 		</tr>
 	</c:if>
 	
 </table>
 </div>
+	<ol class="list-group" style="margin: 1cm; text-align: center;">
+	<c:if test="${getTotalRowFitness != null && getTotalRowFitness != 0}">
+	  <li class="list-group-item">FITNESS BOARD 총 게시글 수 : ${getTotalRowFitness}</li>
+	</c:if>
+	<c:if test="${getTotalRowFitness == null || getTotalRowFitness == 0}">
+	  <li class="list-group-item">FITNESS BOARD의 게시글이 없습니다.</li>	
+	</c:if>
+	
+	<c:if test="${getTotalRowRunning != null && getTotalRowRunning != 0}">
+	  <li class="list-group-item">RUNNING BOARD 총 게시글 수 : ${getTotalRowRunning}</li>
+	</c:if>
+	<c:if test="${getTotalRowRunning == null || getTotalRowRunning == 0}">
+	  <li class="list-group-item">RUNNING BOARD의 게시글이 없습니다.</li>	
+	</c:if>
+	
+	<c:if test="${getTotalRowPilates != null && getTotalRowPilates != 0}">
+	  <li class="list-group-item">PILATES BOARD 총 게시글 수 : ${getTotalRowPilates}</li>
+	</c:if>
+	<c:if test="${getTotalRowPilates == null || getTotalRowPilates == 0}">
+	  <li class="list-group-item">PILATES BOARD의 게시글이 없습니다.</li>	
+	</c:if>
+	
+	<c:if test="${getTotalRowFree != null && getTotalRowFree != 0}">
+	  <li class="list-group-item">FREE BOARD 총 게시글 수 : ${getTotalRowFree}</li>
+	</c:if>
+	<c:if test="${getTotalRowFree == null || getTotalRowFree == 0}">
+	  <li class="list-group-item">FREE BOARD의 게시글이 없습니다.</li>	
+	</c:if>
+	</ol>
 </body>
 </html>

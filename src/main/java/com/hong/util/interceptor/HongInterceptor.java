@@ -31,7 +31,9 @@ public class HongInterceptor extends HandlerInterceptorAdapter{
 	authMap.put("/hong/admin/view.do", 0);
 	authMap.put("/hong/admin/delete.do", 0);
 
-		
+	// 채팅방
+	authMap.put("/hong/chat.do", 0);
+	
 	// Fitness 게시판 - 보기, 등록, 수정, 삭제 - 회원 : 1
 	authMap.put("/hong/fitnessboard/list.do", 1);
 	authMap.put("/hong/fitnessboard/view.do", 1);

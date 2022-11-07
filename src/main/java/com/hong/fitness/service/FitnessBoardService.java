@@ -31,4 +31,7 @@ public interface FitnessBoardService {
 	
 	// 회원이 쓴 게시글 갯수
 	public int getTotalBoard(String memberId) throws Exception;
+	
+	// 전체 데이터 개수
+	public int getTotalRow(PageObject pageObject) throws Exception;
 }

@@ -61,7 +61,7 @@ $(function() {
 
 	<div>
 		<c:if test="${vo.id == 'admin'}">
-		<div class="alert alert-danger" role="alert" style="text-align: center;">
+		<div class="alert alert-danger" role="alert" style="text-align: center; font-size: 20px;">
 		  관리자
 		</div>
 		</c:if>

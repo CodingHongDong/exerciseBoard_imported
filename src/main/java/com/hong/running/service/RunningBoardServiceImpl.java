@@ -60,4 +60,10 @@ public class RunningBoardServiceImpl implements RunningBoardService {
 		return mapper.updateReplyCount(no);
 	}
 
+	@Override
+	public int getTotalRow(PageObject pageObject) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalRow(pageObject);
+	}
+
 }

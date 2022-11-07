@@ -28,4 +28,7 @@ public interface RunningBoardService {
 	// 게시믈 댓글 갯수 보이기
 	public int updateReplyCount(int no) throws Exception;
 	
+	// 전체 데이터 개수
+	public int getTotalRow(PageObject pageObject) throws Exception;
+	
 }

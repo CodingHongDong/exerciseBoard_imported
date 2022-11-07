@@ -54,4 +54,10 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		return mapper.increase(no);
 	}
 
+	@Override
+	public int getTotalRow(PageObject pageObject) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalRow(pageObject);
+	}
+
 }

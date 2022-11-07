@@ -15,7 +15,10 @@ import com.hong.fitness.service.FitnessBoardReplyServiceImpl;
 import com.hong.fitness.service.FitnessBoardServiceImpl;
 import com.hong.fitness.vo.FitnessBoardReplyVO;
 import com.hong.fitness.vo.FitnessBoardVO;
+import com.hong.free.service.FreeBoardServiceImpl;
 import com.hong.member.vo.MemberVO;
+import com.hong.pilates.service.PilatesBoardServiceImpl;
+import com.hong.running.service.RunningBoardServiceImpl;
 import com.hong.util.domain.PageObject;
 
 import lombok.extern.log4j.Log4j;
@@ -32,6 +35,15 @@ public class AdminController {
 	private FitnessBoardServiceImpl fitness;
 	
 	@Autowired
+	private RunningBoardServiceImpl running;
+	
+	@Autowired
+	private PilatesBoardServiceImpl pilates;
+	
+	@Autowired
+	private FreeBoardServiceImpl free;
+	
+	@Autowired
 	private FitnessBoardReplyServiceImpl fitenssReply;
 	
 	// 회원리스트 조회
@@ -45,6 +57,12 @@ public class AdminController {
 		model.addAttribute("vo", list);
 		model.addAttribute("pageObject", pageObject);
 		model.addAttribute("member", adminServiceImpl.getTotalRow(pageObject));
+		
+		// 각 게시판 총 갯수
+		model.addAttribute("getTotalRowFitness", fitness.getTotalRow(pageObject));
+		model.addAttribute("getTotalRowRunning", running.getTotalRow(pageObject));
+		model.addAttribute("getTotalRowPilates", pilates.getTotalRow(pageObject));
+		model.addAttribute("getTotalRowFree", free.getTotalRow(pageObject));
 		
 		return "hong/admin/memberList";
 	}

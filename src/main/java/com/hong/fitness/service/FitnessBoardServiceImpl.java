@@ -82,6 +82,12 @@ public class FitnessBoardServiceImpl implements FitnessBoardService {
 		return mapper.getTotalBoard(memberId);
 	}
 
+	@Override
+	public int getTotalRow(PageObject pageObject) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTotalRow(pageObject);
+	}
+
 	
 	
 }
