@@ -49,6 +49,10 @@ ul li a:hover {
 	color: white;
 }
 
+#now {
+text-align: center;
+}
+
 </style>
 </head>
 <body>
@@ -95,6 +99,8 @@ ul li a:hover {
 		</c:if>			
 	</ul>
 </nav>
+
+<div id="now">${now}</div>
 
 </body>
 </html>

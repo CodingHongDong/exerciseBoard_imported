@@ -1,5 +1,9 @@
 package com.hong.controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +31,15 @@ public class HomeController {
 	
 	// 메인 페이지
 	@GetMapping("/home.do")
-	public String homeView() {
+	public String homeView(Model model) {
 		log.info("메인 페이지");
 		
+        // 현재 날짜 구하기 
+		LocalDateTime now = LocalDateTime.now();
+		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
+		
+        model.addAttribute("now", formatedNow);
+        
 		return "hong/home";
 	}
 	
