@@ -33,12 +33,6 @@ public class HomeController {
 	@GetMapping("/home.do")
 	public String homeView(Model model) {
 		log.info("메인 페이지");
-		
-        // 현재 날짜 구하기 
-		LocalDateTime now = LocalDateTime.now();
-		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
-		
-        model.addAttribute("now", formatedNow);
         
 		return "hong/home";
 	}

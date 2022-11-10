@@ -20,7 +20,10 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>
+			/WEB-INF/spring/appServlet/servlet-context.xml
+			/WEB-INF/spring/ws-config.xml
+			</param-value>
 		</init-param>
 		
 		<!-- 404error 처리 -->
@@ -28,7 +31,7 @@
 			<param-name>throwExceptionIfNoHandlerFound</param-name>
 			<param-value>true</param-value>
 		</init-param>
-		<async-supported>true</async-supported>
+		
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
