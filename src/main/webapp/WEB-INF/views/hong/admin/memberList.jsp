@@ -126,7 +126,7 @@ member {
 	<!-- 전체 페이지가 2페이지 이상이면 보여주는 부분 -->
 		<tr>
 			<td colspan="5">
-				<pageNav:pageNav listURI="admin/memberList.do" 
+				<pageNav:pageNav listURI="/memberList.do" 
 					pageObject="${pageObject}" />
 			</td>
 		</tr>

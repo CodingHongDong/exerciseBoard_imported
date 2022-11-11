@@ -24,10 +24,10 @@ body {
 
 <!-- 로고 -->
 <header>
-	<h1 class="text-center">
-		<a href="home.do"><img src="<c:url value="/resources/user/dog.jpg"/>"></a>
+	<h1 style="width: 50%; height: 50%; display: block; margin: 0 auto;">
+		<a href="home.do"><jsp:include page="/WEB-INF/views/carousel.jsp"/></a>
 	</h1>
-</header>
+</header>>
 
 <!-- login form -->
 <div class="container">
