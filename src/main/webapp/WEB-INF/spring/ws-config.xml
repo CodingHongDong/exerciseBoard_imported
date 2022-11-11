@@ -8,19 +8,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<websocket:handlers>
-		<websocket:mapping handler="echoHandler" path="/echo-ws" />
 		<websocket:mapping handler="chatHandler" path="/chat-ws" />
 	</websocket:handlers>
 	
-	<bean id="echoHandler" class="com.hong.chat.ws.EchoHandler" />
 	<bean id="chatHandler" class="com.hong.chat.ws.ChatWebSocketHandler" />
-	
-	<websocket:handlers>
-		<websocket:mapping handler="echoHandler" path="/echo.sockjs" />
-		<websocket:mapping handler="chatHandler" path="/chat.sockjs" />
-	<websocket:sockjs />
-	
-	</websocket:handlers>
 	
 	<mvc:default-servlet-handler />
 

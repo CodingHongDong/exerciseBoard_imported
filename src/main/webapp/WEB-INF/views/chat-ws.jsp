@@ -4,8 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>채팅</title>
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/sockjs-0.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	var wsocket;
 	
@@ -51,21 +50,21 @@
 		$("#chatArea").scrollTop(maxScroll);
 	}
 
-$(document).ready(function() {
-	$('#message').keypress(function(event){
+	$(document).ready(function() {
+		$('#message').keypress(function(event){
+			
+			var keycode = (event.keyCode ? event.keyCode : event.which);
 		
-	var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13'){
+				send();
+		}
+			event.stopPropagation();
+		});
 	
-	if(keycode == '13'){
-		send();
-	}
-	event.stopPropagation();
+		$('#sendBtn').click(function() { send(); });
+		$('#enterBtn').click(function() { connect(); });
+		$('#exitBtn').click(function() { disconnect(); });
 	});
-	
-	$('#sendBtn').click(function() { send(); });
-	$('#enterBtn').click(function() { connect(); });
-	$('#exitBtn').click(function() { disconnect(); });
-});
 </script>
 <style>
 #chatArea {

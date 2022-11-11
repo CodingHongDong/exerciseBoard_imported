@@ -17,7 +17,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
 	public void afterConnectionEstablished(	
 		WebSocketSession session) throws Exception {	
 		log(session.getId() + " 연결 됨!!");
+		log(session.toString());
 		users.put(session.getId(), session);	
+		
 	}
 
 
