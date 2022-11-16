@@ -65,7 +65,7 @@ select * from imageboard <include refid="search" /> order by no desc limit #{sta
 	
 	<!-- update -->
 	<update id="update">
-		update imageboard set title=#{title}, content=#{content}, memberId=#{memberId} 
+		update imageboard set title=#{title}, content=#{content} 
 		where no=#{no}
 	</update>
 	
@@ -74,5 +74,11 @@ select * from imageboard <include refid="search" /> order by no desc limit #{sta
 		delete from imageboard 
 		where no=#{no}
 	</delete>
+	
+	<!-- imageChange 처리 -->
+	<update id="imageChange">
+		update imageboard set filename = #{filename} 
+		where no = #{no}
+	</update>
 	
 </mapper>
