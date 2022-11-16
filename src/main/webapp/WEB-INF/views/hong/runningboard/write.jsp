@@ -6,8 +6,7 @@
 <html>
 <head>
 <meta name="viewport" content="with=divice-width,initial-scale=1">
-<link rel="stylesheet" 
-		href="<c:url value="/resources/user/css/bootstrap.min.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/user/css/bootstrap.min.css" />">
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="<c:url value="/resources/user/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

@@ -7,17 +7,14 @@
 <meta charset="UTF-8">
 <!-- 부트스트랩, 제이쿼리 -->
 <meta name="viewport" content="with=divice-width,initial-scale=1">
-<link rel="stylesheet" 
-		href="<c:url value="/resources/user/css/bootstrap.min.css" />">
+<link rel="stylesheet" href=" <c:url value="/resources/user/css/bootstrap.min.css" />">
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="<c:url value="/resources/user/js/bootstrap.min.js"/>"></script>
 <style type="text/css">
 body {
 	background-color: #F7FFD9;
 }
 </style>
-
 <title>로그인 폼</title>
 </head>
 <body>

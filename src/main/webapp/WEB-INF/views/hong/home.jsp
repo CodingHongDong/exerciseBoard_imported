@@ -80,6 +80,7 @@ ul li a:hover {
 			<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
 			<li><b><a href="runningboard/list.do">running</a></b></li>
 			<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
+			<li><b><a href="imageboard/list.do">이미지게시판</a></b></li>
 			<li><b><a href="freeboard/list.do">자유게시판</a></b></li>
 			<li><b><a href="/chat-ws.do">채팅방</a></b></li>
 		</c:if>
@@ -87,6 +88,7 @@ ul li a:hover {
 			<li><b><a href="fitnessboard/list.do">fitness</a></b></li>
 			<li><b><a href="runningboard/list.do">running</a></b></li>
 			<li><b><a href="pilatesboard/list.do">pilates</a></b></li>
+			<li><b><a href="imageboard/list.do">이미지게시판</a></b></li>
 			<li><b><a href="freeboard/list.do">자유게시판</a></b></li>
 			<li><b><a href="/chat-ws.do">채팅방</a></b></li>
 			<li><b><a href="admin/memberList.do">회원관리</a></b></li>	

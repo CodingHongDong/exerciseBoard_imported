@@ -54,7 +54,13 @@ public class HongInterceptor extends HandlerInterceptorAdapter{
 	authMap.put("/hong/pilatesboard/write.do", 1);
 	authMap.put("/hong/pilatesboard/update.do", 1);
 	authMap.put("/hong/pilatesboard/delete.do", 1);
-
+	
+	// Image 게시판 - 보기, 등록, 수정, 삭제 - 회원 : 1
+	authMap.put("/hong/imageboard/list.do", 1);
+	authMap.put("/hong/imageboard/view.do", 1);
+	authMap.put("/hong/imageboard/write.do", 1);
+	authMap.put("/hong/imageboard/update.do", 1);
+	authMap.put("/hong/imageboard/delete.do", 1);
 	}
 	
 	

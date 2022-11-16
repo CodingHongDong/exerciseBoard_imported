@@ -7,23 +7,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Fitness Board</title>
 <!-- 부트스트랩, 제이쿼리 -->
 <meta name="viewport" content="with=divice-width,initial-scale=1">
-<link rel="stylesheet" href="<c:url value="/resources/user/css/bootstrap.min.css"/>">
-<link rel="stylesheet" href="<c:url value="/resources/user/css/bootstrap.css"/>">
+<link rel="stylesheet" 
+		href="<c:url value="/resources/user/css/bootstrap.min.css" />">
+<link rel="stylesheet" 
+		href="<c:url value="/resources/user/css/bootstrap.css" />">
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="<c:url value="/resources/user/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Image Board</title>
 <script type="text/javascript">
 $(function() {
 	$(".dataRow").click(function() {
 		var no = $(this).find(".no").text();
-		location = "view.do?no=" + no + "&inc=1"
-				+ "&page=${pageObject.page}"
-				+ "&perPageNum=${pageObject.perPageNum}"
-				+ "&key=${pageObject.key}"
-				+ "&word=${pageObject.word}"
+		location = "view.do?no=" + no
+					+ "&page=${pageObject.page}"
+					+ "&perPageNum=${pageObject.perPageNum}"
+					+ "&key=${pageObject.key}"
+					+ "&word=${pageObject.word}"
 	});
 	
 	// perPageNum 데이터 변경 이벤트 처리 -> jQuery에 대한 이벤트
@@ -31,11 +33,11 @@ $(function() {
 		$("#perPageNumForm").submit();
 	});
 	
-});
+})
 </script>
 <style type="text/css">
 body {
-	background-color: #afe0b3;
+	background-color: #ffffff;
 }
 
 footer {
@@ -67,7 +69,7 @@ img {
 </header>
 
 <div class="container">
-<h2>Fitness 게시판 > 리스트</h2>
+<h2>Image 게시판 > 리스트</h2>
 
 <div class="row" style="margin-bottom: 5px;">
 	<!-- 검색 기능 -->
@@ -114,46 +116,31 @@ img {
 		</form>	
 	</div>
 </div>
-
-<table class="table">
-	<tr>
-		<th>번호</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>작성일</th>
-		<th>조회수</th>
-	</tr>
-	<c:forEach items="${vo}" var="vo">
-	<tr class="dataRow">
-		<td class="no">${vo.no}</td>
-		<td>${vo.title}
-			<c:if test="${vo.reply_count ne 0}">
-				<small><b>[&nbsp;<c:out value="${vo.reply_count}" />&nbsp;]</b></small>
-			</c:if>
-		</td>	
-		<td>${vo.memberId}</td>
-		<td><fmt:formatDate value="${vo.regDate}" pattern="yyyy-MM-dd"/></td>
-		<td>${vo.hit}</td>
-	</tr>
-	</c:forEach>
 	
-	<tr>
-		<td colspan="5">
-			<a href="write.do?perPageNum=${pageObject.perPageNum}" class="btn btn-default">글쓰기</a>
-		</td>
-	</tr>
-	
-	<c:if test="${pageObject.totalPage > 1 }">
-	<!-- 전체 페이지가 2페이지 이상이면 보여주는 부분 -->
-		<tr>
-			<td colspan="5">
-				<pageNav:pageNav listURI="list.do" 
-					pageObject="${pageObject }" />
-			</td>
-		</tr>
-	</c:if>
-	
-</table>
+	<!-- 한줄 시작 -->
+	 <div class="row">
+	 <c:forEach items="${list}" var="vo" varStatus="vs">
+	 	<!-- 이미지 데이터 한개 표시 시작 -->
+		<div class="col-md-3 dataRow">
+		   <div class="thumbnail">	     
+		      <img src="${vo.filename}" alt="Lights" style="width:100%">
+		        <div class="caption">
+		          <p><span class="no">${vo.no}</span>. ${vo.title}</p>
+		          <div>${vo.memberId} (<fmt:formatDate value="${vo.regDate}" pattern="yyyy-MM-dd"/>)<p style="text-align: right;">${vo.hit}</p></div>
+		        </div>		     
+		    </div>
+		  </div>
+		  <!-- 이미지 데이터 한개 표시 끝 -->
+		  <c:if test="${vs.count % 4 == 0 && vs.count != pageObject.perPageNum}">
+		  	${"</div>" }
+		  	${"<div class='row'>" }
+		  </c:if>
+	  </c:forEach>
+	  </div>  
+	  
+  	<!-- 이미지 한줄 끝 -->
+  	<div><pageNav:pageNav listURI="list.do" pageObject="${pageObject}" /></div>
+  	<div><a href="write.do?perPageNum=${pageObject.perPageNum}" class="btn btn-default">등록</a></div>
 </div>
 </body>
 </html>

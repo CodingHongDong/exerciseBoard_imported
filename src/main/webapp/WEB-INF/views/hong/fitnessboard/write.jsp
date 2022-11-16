@@ -6,10 +6,9 @@
 <html>
 <head>
 <meta name="viewport" content="with=divice-width,initial-scale=1">
-<link rel="stylesheet" 
-		href="<c:url value="/resources/user/css/bootstrap.min.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/user/css/bootstrap.min.css" />">
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="<c:url value="/resources/user/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="/resources/user/js/bootstrap.min.js" />"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <style type="text/css">
@@ -21,6 +20,13 @@ details :hover {
 	color: white;
 }
 </style>
+<script type="text/javascript">
+$(function() {
+	$("#cancelBtn").click(function() {
+		history.back();
+	});
+});
+</script>
 <title>Fitness Board</title>
 </head>
 <body>
@@ -56,7 +62,8 @@ details :hover {
 	</tr>
 	
 	<tr>
-		<td colspan="2"><button class="btn btn-default">등록</button></td>
+		<td><button class="btn btn-default">등록</button></td>
+		<td><button type="button" id="cancelBtn" class="btn btn-default">취소</button></td>
 	</tr>
 </table>
 </div>
